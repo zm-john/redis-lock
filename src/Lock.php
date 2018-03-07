@@ -38,7 +38,11 @@ class Lock
      */
     public function get($key)
     {
-        return $this->redis->setnx($key, 1, 'EX', $this->expire, 'NX') === 1;
+        $status = $this->redis->set($key, 1, 'EX', $this->expire, 'NX');
+        if ($status) {
+            return $status->getPayload() === 'OK';
+        }
+        return false;
     }
 
     /**
@@ -59,7 +63,7 @@ class Lock
      */
     public function tryToGet($key, $timeout = 10)
     {
-        $this->alarm($seconds);
+        $this->alarm($timeout);
 
         while (!$this->get($key)) {
             $this->sleep();

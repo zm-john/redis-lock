@@ -1,0 +1,22 @@
+{
+    "name": "quhang/redis-lock",
+    "description": "use redis to control concurrent.",
+    "keywords": ["redis", "lock"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Quhang",
+            "email": "quhang36@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-pcntl": "*",
+        "predis/predis": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Quhang\\RedisLock\\": "src/"
+        }
+    }
+}

@@ -18,5 +18,15 @@
         "psr-4": {
             "Quhang\\RedisLock\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Quhang\\RedisLock\\Laravel\\ServiceProvider"
+            ],
+            "aliases": {
+                "Lock": "Quhang\\RedisLock\\Laravel\\Facades\\Lock"
+            }
+        }
     }
 }

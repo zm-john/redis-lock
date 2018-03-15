@@ -71,6 +71,17 @@ class Lock
         }
     }
 
+    /**
+     * Set redis client
+     * @param  ClientInterface $redis [description]
+     * @return [type]                 [description]
+     */
+    public function redis(ClientInterface $redis)
+    {
+        $this->redis = $redis;
+        return $this;
+    }
+
     protected function checkTimeout()
     {
         if ($this->timeout) {

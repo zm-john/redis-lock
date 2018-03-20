@@ -12,8 +12,7 @@
     ],
     "require": {
         "ext-pcntl": "*",
-        "predis/predis": "^1.1",
-        "quhang/redis-lock": "dev-master"
+        "predis/predis": "^1.1"
     },
     "autoload": {
         "psr-4": {

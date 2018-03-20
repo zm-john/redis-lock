@@ -12,7 +12,7 @@ class ServiceProvider extends LaravelServiceProvider
     public function register()
     {
         $this->publishes([
-            __DIR__.'/../../config/lock.php' => base_path('config'),
+            __DIR__.'/../../config/lock.php' => config_path('lock.php'),
         ]);
     }
 

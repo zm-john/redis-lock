@@ -11,13 +11,15 @@ class ServiceProvider extends LaravelServiceProvider
 
     public function register()
     {
-        $this->publishes([
-            __DIR__.'/../../config/lock.php' => config_path('lock.php'),
-        ]);
+        parent::register();
     }
 
     public function boot()
     {
+        $this->publishes([
+            __DIR__.'/../../config/lock.php' => config_path('lock.php'),
+        ]);
+
         $this->app->singleton('lock', function () {
             $redis = app('redis')->connection(config('lock.connection'));
             return new Lock($redis);

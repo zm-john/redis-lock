@@ -7,13 +7,6 @@ use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
 class ServiceProvider extends LaravelServiceProvider
 {
-    protected $defer = true;
-
-    public function register()
-    {
-        parent::register();
-    }
-
     public function boot()
     {
         $this->publishes([
